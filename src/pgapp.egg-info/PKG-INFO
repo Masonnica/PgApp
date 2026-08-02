@@ -17,9 +17,11 @@ Classifier: Topic :: Games/Entertainment
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.10
+License-File: LICENSE
 Requires-Dist: pygame-ce>=2.5.7
 Provides-Extra: dev
 Requires-Dist: pytest>=7.0; extra == "dev"
 Requires-Dist: pytest-cov; extra == "dev"
 Requires-Dist: build; extra == "dev"
 Requires-Dist: twine; extra == "dev"
+Dynamic: license-file

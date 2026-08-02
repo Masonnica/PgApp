@@ -1,3 +1,5 @@
+LICENSE
+README.md
 pyproject.toml
 src/PgApp.egg-info/PKG-INFO
 src/PgApp.egg-info/SOURCES.txt
