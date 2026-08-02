@@ -6,6 +6,8 @@ from .core.window import Window
 from .core.scene import Scene
 from .core.widget import Widget
 
+from .core.config import Config
+
 __version__ = "0.0.0"
 __all__ = [
     "App",
@@ -43,8 +45,7 @@ def init() -> None:
     with open(config_path, "rb") as f:
         data = tomllib.load(f)
     
-    print(data)
-    
+    Config(data)
 
 def run() -> None:
     """Hàm khởi chạy ứng dụng."""
