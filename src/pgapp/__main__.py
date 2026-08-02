@@ -5,7 +5,7 @@ class ColorHelpFormatter(argparse.HelpFormatter):
     USAGE_COLOR = "\033[1m"
     HEADING_COLOR = "\033[1;34m"
     ACTION_COLOR = "\033[36m"
-    RESET = "_pgapp"
+    RESET = "\033[0m"
     
     def _format_usage(self, usage, actions, groups, prefix):
         text = super()._format_usage(usage, actions, groups, prefix="  ")
