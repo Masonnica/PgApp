@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pgapp"
+version = "0.0.0"
+description = ""
+readme = ""
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Devondint" }
+]
+keywords = ["pygame", "pygame-ce", "game-engine", "framework", "editor"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Games/Entertainment",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "pygame-ce>=2.5.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "build",
+    "twine",
+]
+
+[project.scripts]
+pgapp = "pgapp.__main__:parser"
+
+[project.urls]
+Homepage = "https://github.com/Masonnica"
+Repository = "https://github.com/Masonnica"
+Issues = "https://github.com/Masonnica"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pgapp = ["editor/assets/**"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,6 @@
+from .scene import Scene
+
+class App:
+    def __init__(self): ...
+    def run(self, scene: "Scene") -> None: ...
+    
