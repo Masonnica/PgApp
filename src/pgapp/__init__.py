@@ -28,7 +28,7 @@ def init() -> None:
         import tomli as tomllib
     
     if not os.environ.get("PGAPP_HIDE_SUPPORT_PROMPT"):
-        print(f"Welcom to pgapp({__version__})!")
+        print(f"Welcom to PgApp {__version__}!")
     
     caller_frame = inspect.stack()[1]
     caller_file = Path(caller_frame.filename).resolve()

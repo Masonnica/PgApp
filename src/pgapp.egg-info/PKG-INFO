@@ -1,11 +1,11 @@
 Metadata-Version: 2.4
-Name: pgapp
+Name: PgApp
 Version: 0.0.0
 Author: Devondint
 License: MIT
-Project-URL: Homepage, https://github.com/Masonnica
-Project-URL: Repository, https://github.com/Masonnica
-Project-URL: Issues, https://github.com/Masonnica
+Project-URL: Homepage, https://github.com/Masonnica/PgApp
+Project-URL: Repository, https://github.com/Masonnica/PgApp
+Project-URL: Issues, https://github.com/Masonnica/PgApp/issues
 Keywords: pygame,pygame-ce,game-engine,framework,editor
 Classifier: Development Status :: 3 - Alpha
 Classifier: Programming Language :: Python :: 3

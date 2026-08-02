@@ -1,4 +1,10 @@
 pyproject.toml
+src/PgApp.egg-info/PKG-INFO
+src/PgApp.egg-info/SOURCES.txt
+src/PgApp.egg-info/dependency_links.txt
+src/PgApp.egg-info/entry_points.txt
+src/PgApp.egg-info/requires.txt
+src/PgApp.egg-info/top_level.txt
 src/pgapp/__init__.py
 src/pgapp/__init__.pyi
 src/pgapp/__main__.py
@@ -8,8 +14,7 @@ src/pgapp.egg-info/dependency_links.txt
 src/pgapp.egg-info/entry_points.txt
 src/pgapp.egg-info/requires.txt
 src/pgapp.egg-info/top_level.txt
-src/pgapp/cli/__init__.py
-src/pgapp/cli/home.py
+src/pgapp/cli/scene.py
 src/pgapp/cli/start.py
 src/pgapp/cli/version.py
 src/pgapp/core/__init__.py
@@ -18,7 +23,7 @@ src/pgapp/core/app.pyi
 src/pgapp/core/scene.py
 src/pgapp/core/widget.py
 src/pgapp/core/window.py
-src/pgapp/editor/scene.py
+src/pgapp/editor/scene/__init__.py
 src/pgapp/widgets/button.py
 src/pgapp/widgets/image.py
 src/pgapp/widgets/label.py
