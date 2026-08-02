@@ -48,8 +48,5 @@ Issues = "https://github.com/Masonnica/PgApp/issues"
 [tool.setuptools.packages.find]
 where = ["src"]
 
-[tool.setuptools.package-data]
-pgapp = ["editor/assets/**"]
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
