@@ -1,4 +1,5 @@
 import argparse
+import importlib
 
 class ColorHelpFormatter(argparse.HelpFormatter):
     USAGE_COLOR = "\033[1m"
@@ -37,16 +38,14 @@ def main():
     
     args = parser.parse_args()
     
-    print(args.cmd)
-    
     match args.cmd:
         case "version":
-            from .cli import version
+            importlib.import_module(f"_cli.{"version"}")
         case "start":
-            from .cli.start import run
-            run()
+            module = importlib.import_module("_cli.start")
+            module.run()
         case "scene":
-            from .cli import scene
+            importlib.import_module(f"_cli.{"scene"}")
         case "help":
             parser.print_help()
             print()
