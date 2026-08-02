@@ -34,6 +34,8 @@ def main():
     cmd_ver = subparser.add_parser("version", help="Hiện phiên bản của pgapp.")
     cmd_start = subparser.add_parser("start", help="Khởi tạo dự án mới với pgapp.")
     cmd_scene = subparser.add_parser("scene", help="Mở trình chỉnh sửa cảnh.")
+    cmd_theme = subparser.add_parser("theme", help="Mở trình chỉnh sửa chủ đề.")
+    cmd_setting = subparser.add_parser("setting", help="Mở trình chỉnh sửa cài đặt.")
     cmd_scene = subparser.add_parser("help", help="Hiển thị cách dùng CLI và lệnh.")
     
     args = parser.parse_args()
@@ -46,6 +48,12 @@ def main():
             module.run()
         case "scene":
             importlib.import_module(f"_cli.{"scene"}")
+        case "theme":
+            module = importlib.import_module("_cli.theme")
+            module.run()
+        case "setting":
+            module = importlib.import_module("_cli.setting")
+            module.run()
         case "help":
             parser.print_help()
             print()
