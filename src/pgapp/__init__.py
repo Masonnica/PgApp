@@ -8,7 +8,7 @@ from .core.widget import Widget
 
 from .core.config import Config
 
-__version__ = "0.0.0"
+__version__ = "0.0.1"
 __all__ = [
     "App",
     "Window",

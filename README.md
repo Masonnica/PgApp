@@ -1,7 +1,7 @@
 # PgAPP
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://mit-license.org/)
-![Version: 0.0.0](https://img.shields.io/badge/Version-0.0.0-orange.svg)
+![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-orange.svg)
 
 ---
 
