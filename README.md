@@ -35,4 +35,6 @@ Commands:
 |version   |Show version of PgApp.              |
 |start     |Initialize a new project with PgApp.|
 |scene     |Open the scene editor.              |
+|theme     |Open the theme editor.              |
+|setting   |Open the setting editor.            |
 |help      |Show CLI usage and commands.        |
