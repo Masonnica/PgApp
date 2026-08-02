@@ -7,12 +7,13 @@ src/PgApp.egg-info/dependency_links.txt
 src/PgApp.egg-info/entry_points.txt
 src/PgApp.egg-info/requires.txt
 src/PgApp.egg-info/top_level.txt
-src/_cli/scene.py
-src/_cli/setting.py
-src/_cli/start.py
-src/_cli/theme.py
-src/_cli/version.py
-src/_editor/scene/__init__.py
+src/_pgapp_cli/input_map.py
+src/_pgapp_cli/scene.py
+src/_pgapp_cli/setting.py
+src/_pgapp_cli/start.py
+src/_pgapp_cli/theme.py
+src/_pgapp_cli/version.py
+src/_pgapp_editor/scene/__init__.py
 src/pgapp/__init__.py
 src/pgapp/__init__.pyi
 src/pgapp/__main__.py
@@ -26,6 +27,7 @@ src/pgapp/core/__init__.py
 src/pgapp/core/app.py
 src/pgapp/core/app.pyi
 src/pgapp/core/config.py
+src/pgapp/core/input_map.py
 src/pgapp/core/scene.py
 src/pgapp/core/setting.py
 src/pgapp/core/theme.py

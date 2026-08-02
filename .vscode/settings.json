@@ -1,0 +1,6 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/__pycache__": true
+    }
+}
