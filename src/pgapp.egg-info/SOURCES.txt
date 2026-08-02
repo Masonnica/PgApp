@@ -13,7 +13,10 @@ src/_pgapp_cli/setting.py
 src/_pgapp_cli/start.py
 src/_pgapp_cli/theme.py
 src/_pgapp_cli/version.py
+src/_pgapp_editor/input_map/__init__.py
 src/_pgapp_editor/scene/__init__.py
+src/_pgapp_editor/setting/__init__.py
+src/_pgapp_editor/theme/__init__.py
 src/pgapp/__init__.py
 src/pgapp/__init__.pyi
 src/pgapp/__main__.py
@@ -27,6 +30,7 @@ src/pgapp/core/__init__.py
 src/pgapp/core/app.py
 src/pgapp/core/app.pyi
 src/pgapp/core/config.py
+src/pgapp/core/config.pyi
 src/pgapp/core/input_map.py
 src/pgapp/core/scene.py
 src/pgapp/core/setting.py
