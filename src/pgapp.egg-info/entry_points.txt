@@ -1,2 +1,2 @@
 [console_scripts]
-pgapp = pgapp.__main__:parser
+pgapp = pgapp.__main__:main

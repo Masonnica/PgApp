@@ -1,4 +1,5 @@
-pygame-ce>=2.5.7
+pygame-ce==2.5.8
+argparse==1.4.0
 
 [dev]
 pytest>=7.0

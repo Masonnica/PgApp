@@ -1,2 +1,6 @@
+from pathlib import Path
+
 class Scene:
-    pass
+    def __init__(self, path: Path):
+        pass
+    

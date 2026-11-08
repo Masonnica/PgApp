@@ -26,7 +26,8 @@ classifiers = [
 ]
 
 dependencies = [
-    "pygame-ce>=2.5.7",
+    "pygame-ce==2.5.8",
+    "argparse==1.4.0",
 ]
 
 [project.optional-dependencies]
@@ -38,7 +39,7 @@ dev = [
 ]
 
 [project.scripts]
-pgapp = "pgapp.__main__:parser"
+pgapp = "pgapp.__main__:main"
 
 [project.urls]
 Homepage = "https://github.com/Masonnica/PgApp"

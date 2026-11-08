@@ -6,7 +6,7 @@ from .core.window import Window
 from .core.scene import Scene
 from .core.widget import Widget
 
-from .core.config import Config
+from .core import config
 
 __version__ = "0.0.1"
 __all__ = [
@@ -19,34 +19,10 @@ __all__ = [
 ]
 
 def init() -> None:
-    """Chỉ gọi pgapp.init() ở file khởi đầu của chương trình và phải có file cùng cấp config.toml."""
-    import sys
-    import inspect
-    from pathlib import Path
-    
-    if sys.version_info >= (3, 11):
-        import tomllib
-    else:
-        import tomli as tomllib
-    
-    if not os.environ.get("PGAPP_HIDE_SUPPORT_PROMPT"):
-        print(f"Welcom to PgApp {__version__}!")
-    
-    caller_frame = inspect.stack()[1]
-    caller_file = Path(caller_frame.filename).resolve()
-    config_path = caller_file.parent / "config.toml"
-    
-    if not config_path.exists():
-        raise FileNotFoundError(
-			f"Không tìm thấy file config: {config_path}. "
-			f"Tạo file config.toml cùng thư mục với '{caller_file.name}' trước khi gọi pgapp.init()."
-		)
-    
-    with open(config_path, "rb") as f:
-        data = tomllib.load(f)
-    
-    Config(data)
+    """Chỉ gọi pgapp.init() ở tệp khởi đầu của chương trình và tệp đó phải ở cùng cấp thư mục với tệp config.toml."""
+    config.set_up()
 
 def run() -> None:
-    """Hàm khởi chạy ứng dụng."""
-    pass
+    """Hàm khởi chạy chương trình."""
+    app = App()
+    app.run()

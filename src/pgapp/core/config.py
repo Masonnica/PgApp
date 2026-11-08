@@ -1,17 +1,51 @@
+import sys
 import inspect
 from pathlib import Path
 
+if sys.version_info >= (3, 11):
+    import tomllib
+else:
+    import tomli as tomllib
+
 
 _CONFIG: None|dict = None
+_ROOT_DIR: None|str = None
 
 
 def print_error(prop: str, msg: str):
-    print(f"\033[1;31mLỗi:\033[0m\033[1m {prop}\033[0m - {msg}")
+    print(f"\033[1;31mLỗi cấu hình:\033[0m\033[1m {prop}\033[0m - {msg}")
+
+def set_up():
+    caller_frame = inspect.stack()[2]
+    caller_file = Path(caller_frame.filename).resolve()
+    config_path = caller_file.parent / "config.toml"
+    
+    global _ROOT_DIR
+    _ROOT_DIR = caller_file.parent
+    
+    if not config_path.exists():
+        raise FileNotFoundError(
+            f"Không tìm thấy file config: {config_path}. "
+            f"Tạo file config.toml cùng thư mục với '{caller_file.name}' trước khi gọi pgapp.init()."
+        )
+    
+    with open(config_path, "rb") as f:
+        data = tomllib.load(f)
+    
+    print(data)
+    
+    Config(data)
+
+def get_config():
+    return _CONFIG
+
+def get_root_dir():
+    return _ROOT_DIR
 
 
 class Config:
     def __init__(self, config: dict):
-        self.root_dir = Path(inspect.stack()[2].filename).resolve().parent
+        self.root_dir = _ROOT_DIR
         self.config = config
         
         check = True
@@ -23,6 +57,8 @@ class Config:
         
         global _CONFIG
         _CONFIG = self.config
+        
+        del self
     
     def check_app_prop(self) -> bool:
         check = True
@@ -50,12 +86,26 @@ class Config:
         check = True
         props = self.config["display"]
         
-        if not type(props["viewport_width"]) is int:
+        if not type(props["window_size"]) is dict:
             check = False
-            print_error("viewport_width", "không đúng kiểu dữ liệu (integer)")
-        if not type(props["viewport_height"]) is int:
+            print_error("window_size", "không đúng kiểu dữ liệu (dictionary)")
+        elif not type(props["window_size"]["x"]) is int:
             check = False
-            print_error("viewport_height", "không đúng kiểu dữ liệu (integer)")
+            print_error("window_size.x", "không đúng kiểu dữ liệu (integer)")
+        elif not type(props["window_size"]["y"]) is int:
+            check = False
+            print_error("window_size.y", "không đúng kiểu dữ liệu (integer)")
+        
+        if not type(props["window_pos"]) is dict:
+            check = False
+            print_error("window_pos", "không đúng kiểu dữ liệu (dictionary)")
+        elif not type(props["window_pos"]["x"]) is int:
+            check = False
+            print_error("window_pos.x", "không đúng kiểu dữ liệu (integer)")
+        elif not type(props["window_pos"]["y"]) is int:
+            check = False
+            print_error("window_pos.y", "không đúng kiểu dữ liệu (integer)")
+        
         if not type(props["mode"]) is str:
             check = False
             print_error("mode", "không đúng kiểu dữ liệu (string)")

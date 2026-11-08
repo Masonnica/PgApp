@@ -9,8 +9,8 @@ version = "<your app version>"
 main_scene = "scenes/main.pgasc"
 
 [display]
-viewport_width = 800
-viewport_height = 600
+window_size = {"x" = 800, "y" = 600}
+window_pos = {"x" = 0, "y" = 0}
 mode = "windowed"
 """
 
