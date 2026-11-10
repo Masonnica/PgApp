@@ -12,6 +12,8 @@ main_scene = "scenes/main.pgasc"
 window_size = {"x" = 800, "y" = 600}
 window_pos = {"x" = 0, "y" = 0}
 mode = "windowed"
+opacity = 1.0
+utility = false
 """
 
 main = """import pgapp
@@ -21,6 +23,9 @@ pgapp.run()
 """
 
 main_scene = """
+"""
+
+main_script = """
 """
 
 tree = {
@@ -37,7 +42,11 @@ tree = {
                 "main.pgasc": main_scene,
             },
         },
-        "scripts": {},
+        "scripts": {
+            "files": {
+                "main.pgasr": main_script,
+            },
+        },
     },
     "files": {
         "config.toml": config,

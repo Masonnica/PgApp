@@ -4,7 +4,7 @@ os.environ.setdefault("PYGAME_HIDE_SUPPORT_PROMPT", "1")
 from .core.app import App
 from .core.window import Window
 from .core.scene import Scene
-from .core.widget import Widget
+from .core.node import Node
 
 from .core import config
 
@@ -13,7 +13,7 @@ __all__ = [
     "App",
     "Window",
     "Scene",
-    "Widget",
+    "Node",
     "init",
     "run",
 ]

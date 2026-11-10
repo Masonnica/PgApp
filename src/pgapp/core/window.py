@@ -8,15 +8,18 @@ FLAG_WINDOWED = 0
 FLAG_MINIMIZED = 1
 FLAG_MAXIMIZED = 2
 FLAG_FULLSCREEN = 3
+FLAG_FULLSCREEN_DESKTOP = 4
 
 
 class Window:
-    def __init__(self, title: str, scene: "Scene"):
-        size = (
-            get_config()["display"]["window_size"]["x"],
-            get_config()["display"]["window_size"]["y"],
-        )
-        self.window = pygame.Window(title, size, )
+    def __init__(
+        self, title: str, size: tuple, pos: tuple, mode: int,
+        opacity: float, utility: bool
+    ):
+        self.window = pygame.Window(title, size, pos, )
+    
+    def run_scene(self, scene: "Scene"):
+        pass
     
     def update(self):
         pass

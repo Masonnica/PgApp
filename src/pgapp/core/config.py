@@ -49,8 +49,8 @@ class Config:
         self.config = config
         
         check = True
-        check = check and self.check_app_prop()
-        check = check and self.check_dis_prop()
+        check = check and self._check_app_prop()
+        check = check and self._check_dis_prop()
         
         if not check:
             raise ValueError("Giá trị thuộc tính không hợp lệ hoặc không khả thi")
@@ -60,7 +60,7 @@ class Config:
         
         del self
     
-    def check_app_prop(self) -> bool:
+    def _check_app_prop(self) -> bool:
         check = True
         props = self.config["application"]
         
@@ -82,7 +82,7 @@ class Config:
         
         return check
     
-    def check_dis_prop(self) -> bool:
+    def _check_dis_prop(self) -> bool:
         check = True
         props = self.config["display"]
         
@@ -109,8 +109,16 @@ class Config:
         if not type(props["mode"]) is str:
             check = False
             print_error("mode", "không đúng kiểu dữ liệu (string)")
-        elif props["mode"] not in ["windowed", "minimized", "maximized", "fullscreen"]:
+        elif props["mode"] not in ["windowed", "minimized", "maximized", "fullscreen", "fullscreen_desktop"]:
             check = False
-            print_error("mode", "giá trị nằm ngoài tùy chọn ('windowed', 'minimized', 'maximized', 'fullscreen')")
+            print_error("mode", "giá trị nằm ngoài tùy chọn ('windowed', 'minimized', 'maximized', 'fullscreen', 'fullscreen_desktop')")
+        
+        if not type(props["opacity"]) is float:
+            check = False
+            print_error("opacity", "không đúng kiểu dữ liệu (float)")
+        
+        if not type(props["utility"]) is bool:
+            check = False
+            print_error("utility", "không đúng kiểu dữ liệu (boolean)")
         
         return check
